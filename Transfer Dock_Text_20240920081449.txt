@@ -1,0 +1,62 @@
+
+Names = input("Enter Your Name: ")
+
+print(f"Welcome {Names} to the AI quiz!!")
+
+playing = input("Are you ready to play(YES/NO): " ).lower()
+
+if playing == "yes":
+    print("Okay,Let us play!!" )
+else:
+    quit()
+    
+start = input("Enter START to begin the quiz").upper()
+if start != "START":
+     quit()
+    
+questions = [
+  "1. What does AI stands for?" ,
+  "2. Which library is used for data manipulation in python?" ,
+  "3. The different types of machine learning are?" ,
+  "4. The proposition symbol in AI are?" ,
+  "5. What is the work of Task environment and Rational agent? "
+]
+
+options = [
+   ("A. Artificial Integration", "B. Artificial Intelligence", "C. Automated Intelligence", "D. Algorithmic Intelligence"),
+   ("A. TensorFlow", "B. NumPy", "C. PyTorch", "D. Pandas"),
+   ("A. Supervised", "B. Unsupervised", "C. Reinforcement", "D. All the above"),
+   ("A. true and false", "B. true, false, null", "C. true", "D. false"),
+   ("A. solution and problem", "B. observation and problem", "C. problem and solution", "D. problem and observation")
+]
+
+answers = ("B", "D", "D", "A", "C" )
+
+score =0
+
+
+for question_no in range(len(questions)):
+    print(questions[question_no])
+    for option in options[question_no]:
+        print(option)
+
+    guess = input("Enter (A ,B ,C ,D): ").upper()
+    if guess == answers[question_no]:
+      print("CORRECT!!")
+      score += 1
+    else:
+      print("INCORRECT!!")
+      print(f"The correct answer is: {answers[question_no]}")
+    
+    print()
+if score > 2:
+      print(f"congrats,{Names}!. You Nailed it !!")
+else:
+    print(f"Good Try {Names}.") 
+     
+print(f"{Names}, your final score is : {score}/{len(questions)}" )
+print("Quiz is successfully completed.") 
+    
+   
+
+  
